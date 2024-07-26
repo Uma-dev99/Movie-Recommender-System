@@ -5,7 +5,7 @@ import pandas as pd
 
 spark = SparkSession.builder.appName('movielens').getOrCreate()
 
-df = spark.read.csv(r'C:\Users\MSI\Desktop\ds project\ratings.csv',header=True,inferSchema=True)
+df = spark.read.csv(r'C:\Users\Umash\ratings.csv',header=True,inferSchema=True)
 
 # Descriptive Stats
 df.head(3)
