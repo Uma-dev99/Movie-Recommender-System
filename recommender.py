@@ -12,3 +12,10 @@ df.head(3)
 df.describe().show()
 df.na.drop(how='any')
 (train,test) = df.randomSplit([0.75,0.25])
+
+als = ALS(maxIter=10,regParam=0.16,userCol="userId",ratingCol="rating",itemCol="movieId",rank=16,
+          numUserBlocks=30,numItemBlocks=30)
+
+model = als.fit(train)
+
+pred = model.transform(test)
